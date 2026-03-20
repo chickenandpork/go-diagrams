@@ -12,6 +12,11 @@ var Network = &networkContainer{
 	path: "assets/outscale/network",
 }
 
+func (c *networkContainer) ClientVpn(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/outscale/network/client-vpn.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
 func (c *networkContainer) InternetService(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/outscale/network/internet-service.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -34,10 +39,5 @@ func (c *networkContainer) Net(opts ...diagram.NodeOption) *diagram.Node {
 
 func (c *networkContainer) SiteToSiteVpng(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/outscale/network/site-to-site-vpng.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *networkContainer) ClientVpn(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/outscale/network/client-vpn.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

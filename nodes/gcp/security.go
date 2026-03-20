@@ -12,6 +12,11 @@ var Security = &securityContainer{
 	path: "assets/gcp/security",
 }
 
+func (c *securityContainer) Iam(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/security/iam.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
 func (c *securityContainer) Iap(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/security/iap.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -34,10 +39,5 @@ func (c *securityContainer) SecurityCommandCenter(opts ...diagram.NodeOption) *d
 
 func (c *securityContainer) SecurityScanner(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/security/security-scanner.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *securityContainer) Iam(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/security/iam.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
