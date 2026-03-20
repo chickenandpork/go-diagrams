@@ -1,0 +1,59 @@
+name: expand-assets-and-build
+
+on:
+  push:
+    branches:
+      - "**"
+
+permissions:
+  contents: write  # required to push commits back
+
+jobs:
+  expand-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repo (full history so we can push)
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. Set up Go
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"  # adjust if needed
+          cache: true
+          cache-dependency-path: |
+            go.sum
+            **/go.sum  # supports multi-module repos if I add to examples
+
+
+      # 3. Run your generator
+      - name: Run asset expansion
+        run: |
+          go run ./cmd/gen
+
+      # 4. Commit changes back to branch (PR-safe)
+      - name: Commit changes
+        run: |
+          # Configure bot identity
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          # Detect changes
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add -A
+            git commit -m "expand assets"
+
+            # Push back to the same branch
+            git push origin HEAD:${GITHUB_REF#refs/heads/}
+          else
+            echo "No changes to commit"
+          fi
+
+      # 5. Build nodes
+      - name: Build nodes
+        run: |
+          go build ./nodes/...
