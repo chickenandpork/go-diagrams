@@ -12,33 +12,8 @@ var Security = &securityContainer{
 	path: "assets/oci/security",
 }
 
-func (c *securityContainer) Encryption(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/encryption.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *securityContainer) MaxSecurityZoneWhite(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/max-security-zone-white.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
 func (c *securityContainer) CloudGuardWhite(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/cloud-guard-white.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *securityContainer) DdosWhite(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/ddos-white.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *securityContainer) EncryptionWhite(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/encryption-white.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *securityContainer) Waf(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/waf.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
 
@@ -47,28 +22,23 @@ func (c *securityContainer) CloudGuard(opts ...diagram.NodeOption) *diagram.Node
 	return diagram.NewNode(nopts...)
 }
 
+func (c *securityContainer) DdosWhite(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/ddos-white.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
 func (c *securityContainer) Ddos(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/ddos.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
 
-func (c *securityContainer) Vault(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/vault.png")}, c.opts, opts)
+func (c *securityContainer) EncryptionWhite(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/encryption-white.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
 
-func (c *securityContainer) MaxSecurityZone(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/max-security-zone.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *securityContainer) VaultWhite(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/vault-white.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *securityContainer) WafWhite(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/waf-white.png")}, c.opts, opts)
+func (c *securityContainer) Encryption(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/encryption.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
 
@@ -89,5 +59,35 @@ func (c *securityContainer) KeyManagementWhite(opts ...diagram.NodeOption) *diag
 
 func (c *securityContainer) KeyManagement(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/key-management.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *securityContainer) MaxSecurityZoneWhite(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/max-security-zone-white.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *securityContainer) MaxSecurityZone(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/max-security-zone.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *securityContainer) VaultWhite(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/vault-white.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *securityContainer) Vault(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/vault.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *securityContainer) WafWhite(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/waf-white.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *securityContainer) Waf(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/oci/security/waf.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

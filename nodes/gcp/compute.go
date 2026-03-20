@@ -12,6 +12,16 @@ var Compute = &computeContainer{
 	path: "assets/gcp/compute",
 }
 
+func (c *computeContainer) AppEngine(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/compute/app-engine.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *computeContainer) ComputeEngine(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/compute/compute-engine.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
 func (c *computeContainer) ContainerOptimizedOs(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/compute/container-optimized-os.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -39,15 +49,5 @@ func (c *computeContainer) KubernetesEngine(opts ...diagram.NodeOption) *diagram
 
 func (c *computeContainer) Run(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/compute/run.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *computeContainer) AppEngine(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/compute/app-engine.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *computeContainer) ComputeEngine(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/gcp/compute/compute-engine.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

@@ -22,21 +22,6 @@ func (c *mediaContainer) ElementalConductor(opts ...diagram.NodeOption) *diagram
 	return diagram.NewNode(nopts...)
 }
 
-func (c *mediaContainer) ElementalMedialive(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/media/elemental-medialive.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *mediaContainer) ElementalMediapackage(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/media/elemental-mediapackage.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *mediaContainer) ElementalServer(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/media/elemental-server.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
 func (c *mediaContainer) ElementalDelta(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/media/elemental-delta.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -57,6 +42,16 @@ func (c *mediaContainer) ElementalMediaconvert(opts ...diagram.NodeOption) *diag
 	return diagram.NewNode(nopts...)
 }
 
+func (c *mediaContainer) ElementalMedialive(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/media/elemental-medialive.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *mediaContainer) ElementalMediapackage(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/media/elemental-mediapackage.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
 func (c *mediaContainer) ElementalMediastore(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/media/elemental-mediastore.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -64,5 +59,10 @@ func (c *mediaContainer) ElementalMediastore(opts ...diagram.NodeOption) *diagra
 
 func (c *mediaContainer) ElementalMediatailor(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/media/elemental-mediatailor.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *mediaContainer) ElementalServer(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/media/elemental-server.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

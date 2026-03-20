@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 
 	"github.com/dave/jennifer/jen"
@@ -142,7 +143,22 @@ func genContainer(root, pName, pPath, name string, imgs map[string]string) error
 		},
 	)
 
-	for img, imgPath := range imgs {
+        // sorted keys for consistent generation
+        type kv struct {
+            Key   string
+            Value string
+        }
+        sorted := make([]kv, 0, len(imgs))
+        for k, v := range imgs {
+            sorted = append(sorted, kv{k, v})
+        }
+        sort.Slice(sorted, func(i, j int) bool {
+            return sorted[i].Value < sorted[j].Value
+        })
+
+	for _, p := range sorted {
+		img := p.Key
+                imgPath := p.Value
 		method := strcase.ToCamel(img)
 		f.Func().Params(jen.Id("c").Op("*").Id(cname)).
 			Id(method).

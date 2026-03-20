@@ -12,6 +12,21 @@ var Devops = &devopsContainer{
 	path: "assets/azure/devops",
 }
 
+func (c *devopsContainer) ApplicationInsights(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/azure/devops/application-insights.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *devopsContainer) Artifacts(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/azure/devops/artifacts.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *devopsContainer) Boards(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/azure/devops/boards.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
 func (c *devopsContainer) Devops(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/azure/devops/devops.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -34,20 +49,5 @@ func (c *devopsContainer) Repos(opts ...diagram.NodeOption) *diagram.Node {
 
 func (c *devopsContainer) TestPlans(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/azure/devops/test-plans.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *devopsContainer) ApplicationInsights(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/azure/devops/application-insights.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *devopsContainer) Artifacts(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/azure/devops/artifacts.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *devopsContainer) Boards(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/azure/devops/boards.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }

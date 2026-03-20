@@ -22,16 +22,6 @@ func (c *generalContainer) General(opts ...diagram.NodeOption) *diagram.Node {
 	return diagram.NewNode(nopts...)
 }
 
-func (c *generalContainer) GenericOfficeBuilding(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/general/generic-office-building.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
-func (c *generalContainer) User(opts ...diagram.NodeOption) *diagram.Node {
-	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/general/user.png")}, c.opts, opts)
-	return diagram.NewNode(nopts...)
-}
-
 func (c *generalContainer) GenericDatabase(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/general/generic-database.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
@@ -39,6 +29,11 @@ func (c *generalContainer) GenericDatabase(opts ...diagram.NodeOption) *diagram.
 
 func (c *generalContainer) GenericFirewall(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/general/generic-firewall.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *generalContainer) GenericOfficeBuilding(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/general/generic-office-building.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
 
@@ -59,6 +54,11 @@ func (c *generalContainer) Marketplace(opts ...diagram.NodeOption) *diagram.Node
 
 func (c *generalContainer) TradicionalServer(opts ...diagram.NodeOption) *diagram.Node {
 	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/general/tradicional-server.png")}, c.opts, opts)
+	return diagram.NewNode(nopts...)
+}
+
+func (c *generalContainer) User(opts ...diagram.NodeOption) *diagram.Node {
+	nopts := diagram.MergeOptionSets(diagram.OptionSet{diagram.Icon("assets/aws/general/user.png")}, c.opts, opts)
 	return diagram.NewNode(nopts...)
 }
 
