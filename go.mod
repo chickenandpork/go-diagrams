@@ -16,7 +16,7 @@ require (
 )
 
 require (
-	dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9 // indirect
+	dmitri.shuralyov.com/gpu/mtl 85de2813cf6b // indirect
 	github.com/BurntSushi/toml v0.3.1 // indirect
 	github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802 // indirect
 	github.com/UnnoTed/fileb0x v1.1.4 // indirect
