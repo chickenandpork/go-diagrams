@@ -1,6 +1,6 @@
 module github.com/blushft/go-diagrams
 
-go 1.23
+go 1.25.0
 
 toolchain go1.26.1
 
@@ -10,7 +10,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/iancoleman/strcase v0.3.0
 	github.com/stretchr/testify v1.6.1
-	golang.org/x/net v0.0.0-20190620200207-3b0461eec859
+	golang.org/x/net v0.52.0
 )
 
 require (
