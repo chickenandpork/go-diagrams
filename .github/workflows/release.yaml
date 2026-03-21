@@ -1,0 +1,69 @@
+---
+name: Release
+# yamllint disable-line rule:truthy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    needs: [build]
+    steps:
+      -
+        name: Cut Github Release
+        uses: googleapis/release-please-action@v4
+        # Settings -> Actions -> General -> Workflow Permissions
+        # - select "Read repo contents", and
+        # - enable "Allow Github Actions to create and approve pull requests"
+        id: release
+        with:
+          config-file: .github/release-please-config.json
+          manifest-file: .github/release-please-manifest.json
+      -
+        name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      -
+        name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.26"  # adjust if needed
+          cache: true
+          cache-dependency-path: |
+            go.sum
+            **/go.sum  # supports multi-module repos if I add to examples
+      -
+        name: Build
+        run: |
+          go build ./...
+      -
+        name: Canonicalize Parameters
+        # I was using this to canonicalize version/tag but now it helps reuse workflows
+        id: params
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
+          echo "::set-output name=semver::$(echo ${{ steps.release.outputs.tag_name }} | sed -e 's/^v//g')"
+          echo "::set-output name=name::$(echo ${GITHUB_REPOSITORY} | cut -d / -f 2)"
+          echo "::set-output name=prefix::$(echo ${GITHUB_REPOSITORY} | cut -d / -f 2)-${{ steps.release.outputs.tag_name }}"
+          echo "::set-output name=tag_name::${{ steps.release.outputs.tag_name }}"
+      -
+        name: Cut Size-Optimized Archive
+        env:
+          PREFIX: ${{ steps.params.outputs.prefix }}
+          TAG: ${{ steps.params.outputs.tag_name }}
+        if: ${{ steps.release.outputs.release_created }}
+        run: git archive --format=tar --prefix=${PREFIX}/ $(git log -1 --format=%H) | xz -c9 > ${PREFIX}.tar.xz
+      -
+        name: Upload Size-Optimized Archive
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PREFIX: ${{ steps.params.outputs.prefix }}
+          TAG: ${{ steps.release.outputs.tag_name }}
+        if: ${{ steps.release.outputs.release_created }}
+        run: gh release upload ${TAG} ${PREFIX}.tar.xz
