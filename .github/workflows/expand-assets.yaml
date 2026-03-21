@@ -15,7 +15,7 @@ jobs:
     steps:
       # 1. Checkout repo (full history so we can push)
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
