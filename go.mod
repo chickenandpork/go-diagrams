@@ -2,7 +2,7 @@ module github.com/blushft/go-diagrams
 
 go 1.25.0
 
-toolchain go1.26.1
+toolchain go1.26.2
 
 require (
 	github.com/awalterschulze/gographviz v0.0.0-20200901124122-0eecad45bd71
