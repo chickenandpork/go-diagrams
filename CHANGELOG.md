@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.0.1](https://github.com/chickenandpork/go-diagrams/compare/v1.0.0...v1.0.1) (2026-04-09)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/stretchr/testify to v1.11.1 ([#19](https://github.com/chickenandpork/go-diagrams/issues/19)) ([a10f43c](https://github.com/chickenandpork/go-diagrams/commit/a10f43c6513f27762037d53901df29892f691f4b))
+* **deps:** update module golang.org/x/net to v0.52.0 ([#20](https://github.com/chickenandpork/go-diagrams/issues/20)) ([cf519da](https://github.com/chickenandpork/go-diagrams/commit/cf519da1535f3a8c5c0f0ffa8e8b88a64c640941))
+* **deps:** update module golang.org/x/net to v0.53.0 ([#24](https://github.com/chickenandpork/go-diagrams/issues/24)) ([ab9a47a](https://github.com/chickenandpork/go-diagrams/commit/ab9a47ae484ccb077fb6a2f8206ba1fb27da6544))
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency go to v1.26.2 ([#23](https://github.com/chickenandpork/go-diagrams/issues/23)) ([83451f9](https://github.com/chickenandpork/go-diagrams/commit/83451f9089e9de00e1fe6098254c6f863aa73814))
+
 ## 1.0.0 (2026-03-21)
 
 
