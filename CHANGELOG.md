@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.0.1](https://github.com/chickenandpork/go-diagrams/compare/v1.0.0...v1.0.1) (2026-07-21)
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/stretchr/testify to v1.11.1 ([#19](https://github.com/chickenandpork/go-diagrams/issues/19)) ([a10f43c](https://github.com/chickenandpork/go-diagrams/commit/a10f43c6513f27762037d53901df29892f691f4b))
+* **deps:** update module golang.org/x/net to v0.52.0 ([#20](https://github.com/chickenandpork/go-diagrams/issues/20)) ([cf519da](https://github.com/chickenandpork/go-diagrams/commit/cf519da1535f3a8c5c0f0ffa8e8b88a64c640941))
+* **deps:** update module golang.org/x/net to v0.53.0 ([#24](https://github.com/chickenandpork/go-diagrams/issues/24)) ([ab9a47a](https://github.com/chickenandpork/go-diagrams/commit/ab9a47ae484ccb077fb6a2f8206ba1fb27da6544))
+* **deps:** update module golang.org/x/net to v0.54.0 ([#27](https://github.com/chickenandpork/go-diagrams/issues/27)) ([1811539](https://github.com/chickenandpork/go-diagrams/commit/181153988d246940806e4deac16f66adf52c9243))
+* **deps:** update module golang.org/x/net to v0.55.0 ([#28](https://github.com/chickenandpork/go-diagrams/issues/28)) ([bcda515](https://github.com/chickenandpork/go-diagrams/commit/bcda51571a0e7413368950ae0227aaed76b7155c))
+* **deps:** update module golang.org/x/net to v0.56.0 ([#30](https://github.com/chickenandpork/go-diagrams/issues/30)) ([ccc7783](https://github.com/chickenandpork/go-diagrams/commit/ccc7783c45a4659cf4474724376d4054cdeb7b39))
+* **deps:** update module golang.org/x/net to v0.57.0 ([#38](https://github.com/chickenandpork/go-diagrams/issues/38)) ([2e2592c](https://github.com/chickenandpork/go-diagrams/commit/2e2592c3924da21bc0302f6dffb25ad6016d8c01))
+
+
+### Miscellaneous Chores
+
+* **deps:** update actions/checkout action to v6.0.3 ([#34](https://github.com/chickenandpork/go-diagrams/issues/34)) ([ca2fdb3](https://github.com/chickenandpork/go-diagrams/commit/ca2fdb319533a8cd52e191eadb374ee6ca7ca6b7))
+* **deps:** update actions/checkout action to v6.1.0 ([#40](https://github.com/chickenandpork/go-diagrams/issues/40)) ([f2e56a2](https://github.com/chickenandpork/go-diagrams/commit/f2e56a259de92c4f5fda166171c0e4cb2430cfc4))
+* **deps:** update actions/setup-go action to v6.5.0 ([#35](https://github.com/chickenandpork/go-diagrams/issues/35)) ([6acee97](https://github.com/chickenandpork/go-diagrams/commit/6acee97e7ff5cdcf4d8c4f65f3a9b98a871defa2))
+* **deps:** update dependency go to v1.26.2 ([#23](https://github.com/chickenandpork/go-diagrams/issues/23)) ([83451f9](https://github.com/chickenandpork/go-diagrams/commit/83451f9089e9de00e1fe6098254c6f863aa73814))
+* **deps:** update go toolchain directive to v1.26.3 ([#26](https://github.com/chickenandpork/go-diagrams/issues/26)) ([d9c5666](https://github.com/chickenandpork/go-diagrams/commit/d9c5666174ed62b7bc1c5965c487b6d9ddf6c752))
+* **deps:** update go toolchain directive to v1.26.4 ([#29](https://github.com/chickenandpork/go-diagrams/issues/29)) ([ce42514](https://github.com/chickenandpork/go-diagrams/commit/ce4251497f5d8a8068108e2b3ec62f9c78f816a2))
+* **deps:** update go toolchain directive to v1.26.5 ([#37](https://github.com/chickenandpork/go-diagrams/issues/37)) ([9466404](https://github.com/chickenandpork/go-diagrams/commit/94664044b3e6d83b52e5e54868a36a54e43f2ea2))
+* **deps:** update googleapis/release-please-action action to v4.4.1 ([#36](https://github.com/chickenandpork/go-diagrams/issues/36)) ([1da4bd3](https://github.com/chickenandpork/go-diagrams/commit/1da4bd38aecf1705bf8d3121b43381b7aa65f84d))
+
 ## 1.0.0 (2026-03-21)
 
 
